@@ -35,7 +35,7 @@ function Home(props) {
 
   const handleGetDetails = async () => {
     const response = await getPosts();
-    console.log(response);
+    console.log(response.data);
     setDetails(response);
   };
 
@@ -46,6 +46,7 @@ function Home(props) {
         data
       );
       setData(res);
+      // console.log(res);
     } catch (error) {
       console.log(error);
     }
@@ -95,18 +96,23 @@ function Home(props) {
       </div>
 
       <div>
-        {details.data &&
-          details.data.map((item, index) => (
-            <div
-              key={index}
-              style={{ border: "2px solid black", margin: 10, padding: 20 }}
-            >
-              <h2>{item.body}</h2>
-              <h1>{item.id}</h1>
-              <h3>{item.title}</h3>
-              <h4>{item.userId}</h4>
-            </div>
-          ))}
+        {details.data ? (
+          <div>
+            {details.data.map((item, index) => (
+              <div
+                key={index}
+                style={{ border: "2px solid black", margin: 10, padding: 20 }}
+              >
+                <h2>{item.body}</h2>
+                <h1>{item.id}</h1>
+                <h3>{item.title}</h3>
+                <h4>{item.userId}</h4>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div>Loading...</div>
+        )}
       </div>
     </div>
   );
