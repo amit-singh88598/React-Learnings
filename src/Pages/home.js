@@ -10,7 +10,7 @@ function Home(props) {
   const array3 = [...array1, ...array2];
   const fruit = ["apple", "mango", "banana"];
   const veg = ["lemon", "potato", "tomato"];
-  const [data, setData] = useState();
+  // const [data, setData] = useState();
   const [details, setDetails] = useState();
   const [myNum, setMyNum] = useState(0);
 
@@ -29,7 +29,7 @@ function Home(props) {
   };
 
   useEffect((props) => {
-    getData();
+    // getData();
     handleGetDetails();
   }, []);
 
@@ -39,18 +39,15 @@ function Home(props) {
     setDetails(response);
   };
 
-  const getData = async () => {
-    try {
-      const res = await axios.get(
-        "https://jsonplaceholder.typicode.com/posts",
-        data
-      );
-      setData(res);
-      // console.log(res);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const getData = async () => {
+  //   try {
+  //     const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+  //     setData(res);
+  //     // console.log(res);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   const mix = fruit.concat(veg);
 
@@ -96,19 +93,20 @@ function Home(props) {
       </div>
 
       <div>
-        {details.data ? (
+        {details ? (
           <div>
-            {details.data.map((item, index) => (
-              <div
-                key={index}
-                style={{ border: "2px solid black", margin: 10, padding: 20 }}
-              >
-                <h2>{item.body}</h2>
-                <h1>{item.id}</h1>
-                <h3>{item.title}</h3>
-                <h4>{item.userId}</h4>
-              </div>
-            ))}
+            {details.data &&
+              details.data.map((item, index) => (
+                <div
+                  key={index}
+                  style={{ border: "2px solid black", margin: 10, padding: 20 }}
+                >
+                  <h2>{item.body}</h2>
+                  <h1>{item.id}</h1>
+                  <h3>{item.title}</h3>
+                  <h4>{item.userId}</h4>
+                </div>
+              ))}
           </div>
         ) : (
           <div>Loading...</div>
