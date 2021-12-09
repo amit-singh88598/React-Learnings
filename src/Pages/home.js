@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import { getPosts } from "../Store/Actions/userDataAction";
 
 function Home(props) {
   const array1 = ["a", "b", "c"];
@@ -10,6 +11,7 @@ function Home(props) {
   const fruit = ["apple", "mango", "banana"];
   const veg = ["lemon", "potato", "tomato"];
   const [data, setData] = useState();
+  const [details, setDetails] = useState();
   const [myNum, setMyNum] = useState(0);
 
   const inputOne = useRef();
@@ -28,7 +30,14 @@ function Home(props) {
 
   useEffect((props) => {
     getData();
-  });
+    handleGetDetails();
+  }, []);
+
+  const handleGetDetails = async () => {
+    const response = await getPosts();
+    console.log(response);
+    setDetails(response);
+  };
 
   const getData = async () => {
     try {
@@ -36,7 +45,6 @@ function Home(props) {
         "https://jsonplaceholder.typicode.com/posts",
         data
       );
-      console.log(res);
       setData(res);
     } catch (error) {
       console.log(error);
@@ -84,6 +92,21 @@ function Home(props) {
         <h2>The Value is : {myNum}</h2>
         <button onClick={() => getNumBox()}>Number</button>
         <button onClick={() => getTextBox()}>Text</button>
+      </div>
+
+      <div>
+        {details.data &&
+          details.data.map((item, index) => (
+            <div
+              key={index}
+              style={{ border: "2px solid black", margin: 10, padding: 20 }}
+            >
+              <h2>{item.body}</h2>
+              <h1>{item.id}</h1>
+              <h3>{item.title}</h3>
+              <h4>{item.userId}</h4>
+            </div>
+          ))}
       </div>
     </div>
   );
