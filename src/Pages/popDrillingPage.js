@@ -14,40 +14,40 @@ function PopDrillingPage(props) {
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
-      <div>
-        <h1 style={{ textAlign: "center" }}>Pop Drilling Page </h1>
-        <h2 style={{ textAlign: "center" }}>App Counter</h2>
-        <h3 style={{ textAlign: "center" }}>{counter}</h3>
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <button
-            style={{
-              margin: 5,
-              padding: 5,
-              backgroundColor: "#000",
-              color: "#fff",
-            }}
-            onClick={handleDecriment}
-          >
-            Decriment
-          </button>
-          <button
-            style={{
-              margin: 5,
-              padding: 5,
-              backgroundColor: "#000",
-              color: "#fff",
-            }}
-            onClick={handleIncrement}
-          >
-            Increment
-          </button>
-        </div>
-        <CounterContext.Provider value={counter}>
+    <CounterContext.Provider value={{ counter, setCounter }}>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <div>
+          <h1 style={{ textAlign: "center" }}>Pop Drilling Page </h1>
+          <h2 style={{ textAlign: "center" }}>App Counter</h2>
+          <h3 style={{ textAlign: "center" }}>{counter}</h3>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <button
+              style={{
+                margin: 5,
+                padding: 5,
+                backgroundColor: "#000",
+                color: "#fff",
+              }}
+              onClick={handleDecriment}
+            >
+              Decriment
+            </button>
+            <button
+              style={{
+                margin: 5,
+                padding: 5,
+                backgroundColor: "#000",
+                color: "#fff",
+              }}
+              onClick={handleIncrement}
+            >
+              Increment
+            </button>
+          </div>
           <IncrementComp />
-        </CounterContext.Provider>
+        </div>
       </div>
-    </div>
+    </CounterContext.Provider>
   );
 }
 
