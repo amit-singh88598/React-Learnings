@@ -10,7 +10,7 @@ function Home(props) {
   const array3 = [...array1, ...array2];
   const fruit = ["apple", "mango", "banana"];
   const veg = ["lemon", "potato", "tomato"];
-  // const [data, setData] = useState();
+  const [data, setData] = useState();
   const [details, setDetails] = useState();
   const [myNum, setMyNum] = useState(0);
 
@@ -39,15 +39,15 @@ function Home(props) {
     setDetails(response);
   };
 
-  // const getData = async () => {
-  //   try {
-  //     const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
-  //     setData(res);
-  //     // console.log(res);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const getData = async () => {
+    try {
+      const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      setData(res);
+      // console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const mix = fruit.concat(veg);
 
@@ -66,6 +66,10 @@ function Home(props) {
     <div>
       <h1>This is home page...</h1>
       <Link to="/about">About</Link>
+      <Link to="/popDrillingPage">PopDrillingPage</Link>
+      <Link to="/register">Register</Link>
+      <div>Or</div>
+      <Link to="/signIn">SignIn</Link>
       <div>
         {mix.map((item, index) => (
           <div key={index}> {item}</div>

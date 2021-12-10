@@ -23,7 +23,9 @@ function About(props) {
   return (
     <AboutContainer>
       <h2>This is About Page</h2>
-      <Link to="/">Home</Link>
+      <Link to="/">Home</Link> <div>Or</div>
+      <Link to="/signIn">SignIn</Link>
+      <Link to="/register">Register</Link>
       {response.data &&
         response.data.map((item, index) => (
           <div key={index}>
