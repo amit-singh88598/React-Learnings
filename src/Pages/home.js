@@ -65,11 +65,15 @@ function Home(props) {
   return (
     <div>
       <h1>This is home page...</h1>
-      <Link to="/about">About</Link>
-      <Link to="/popDrillingPage">PopDrillingPage</Link>
-      <Link to="/register">Register</Link>
-      <div>Or</div>
-      <Link to="/signIn">SignIn</Link>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <Link to="/about">About</Link>
+        <Link to="/grid">Grid</Link>
+        <Link to="/popDrillingPage">PopDrillingPage</Link>
+        <Link to="/googleAuth">GoogleAuth</Link>
+        <Link to="/register">Register</Link>
+        <div>Or</div>
+        <Link to="/signIn">SignIn</Link>
+      </div>
       <div>
         {mix.map((item, index) => (
           <div key={index}> {item}</div>
