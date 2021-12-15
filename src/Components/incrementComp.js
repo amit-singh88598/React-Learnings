@@ -3,8 +3,7 @@ import { CounterContext } from "../counterContext";
 import SubIncrementComp from "./subIncrementComp";
 
 function IncrementComp() {
-  const value = useContext(CounterContext);
-  //   const { counter, setCounter } = useContext(CounterContext);
+  const { counter, setCounter } = useContext(CounterContext);
   return (
     <div>
       <h1
@@ -15,8 +14,19 @@ function IncrementComp() {
           textAlign: "center",
         }}
       >
-        {value}
+        {counter}
       </h1>
+      <button
+        style={{
+          margin: 5,
+          padding: 5,
+          backgroundColor: "#000",
+          color: "#fff",
+        }}
+        onClick={() => setCounter(counter + 1)}
+      >
+        Increment
+      </button>
       <SubIncrementComp />
     </div>
   );
