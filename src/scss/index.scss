@@ -14,6 +14,20 @@
 
 .root:hover {
   height: 220px;
-  width: 220px;
+  font-weight: 600;
   background-color: rgb(254, 237, 214);
+}
+
+.active {
+  font-size: 30px;
+  color: aquamarine;
+  text-decoration: none;
+  border-bottom: 5px solid aquamarine;
+}
+
+.nonActive {
+  font-size: 28px;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
 }

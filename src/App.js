@@ -10,8 +10,8 @@ function App() {
   return (
     <div>
       {/* <CounterContext.Provider value={count}> */}
-      <div>{count}</div>
-      <button onClick={handleCount}>Click</button>
+      {/* <div>{count}</div>
+      <button onClick={handleCount}>Click</button> */}
       <Navigation />
       {/* </CounterContext.Provider> */}
     </div>

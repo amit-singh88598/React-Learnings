@@ -2,6 +2,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { IconButton, InputAdornment, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Linking from "../Components/linking";
 import { regxEmail, regxPassword } from "../regularExpressions";
 
 function SignIn(props) {
@@ -56,15 +57,7 @@ function SignIn(props) {
               borderRadius: 20,
             }}
           >
-            <div
-              style={{
-                fontSize: "2em",
-                fontWeight: 600,
-                textAlign: "center",
-              }}
-            >
-              SIGN-IN
-            </div>
+            <Linking />
             <div
               style={{
                 display: "flex",
