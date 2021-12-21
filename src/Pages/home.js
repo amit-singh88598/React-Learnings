@@ -84,7 +84,9 @@ function Home(props) {
       </div>
       <div>
         <h1 style={{ textAlign: "center" }}>HOC Example</h1>
-        <Hoc cmp={Counter} />
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <Hoc cmp={Counter} />
+        </div>
       </div>
       <div>
         <h1>Learning</h1>
