@@ -3,6 +3,8 @@ import axios from "axios";
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { getPosts } from "../Store/Actions/userDataAction";
+import Hoc from "./hoc";
+import Counter from "../Components/counter";
 
 function Home(props) {
   const array1 = ["a", "b", "c"];
@@ -70,6 +72,7 @@ function Home(props) {
         <Link to="/grid">Grid</Link>
         <Link to="/popDrillingPage">PopDrillingPage</Link>
         <Link to="/googleAuth">GoogleAuth</Link>
+        <Link to="/hoc">Hoc</Link>
         <Link to="/register">Register</Link>
         <div>Or</div>
         <Link to="/signIn">SignIn</Link>
@@ -78,6 +81,10 @@ function Home(props) {
         {mix.map((item, index) => (
           <div key={index}> {item}</div>
         ))}
+      </div>
+      <div>
+        <h1 style={{ textAlign: "center" }}>HOC Example</h1>
+        <Hoc cmp={Counter} />
       </div>
       <div>
         <h1>Learning</h1>

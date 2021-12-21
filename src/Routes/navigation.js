@@ -7,6 +7,7 @@ import PopDrillingPage from "../Pages/popDrillingPage";
 import Register from "../Pages/register";
 import SignIn from "../Pages/signIn";
 import Grid from "../Pages/grid";
+import Hoc from "../Pages/hoc";
 
 function Navigation(props) {
   return (
@@ -19,6 +20,7 @@ function Navigation(props) {
           <Route exact path="/signIn" element={<SignIn />}></Route>
           <Route exact path="/googleAuth" element={<GoogleAuth />}></Route>
           <Route exact path="/grid" element={<Grid />}></Route>
+          <Route exact path="/hoc" element={<Hoc />}></Route>
           <Route
             exact
             path="/popDrillingPage"
