@@ -64,6 +64,10 @@ const users = [
 
 // console.log(output);
 
+const output = users.filter((x) => x.age < 25).map((x) => x.firstname);
+
+console.log(output);
+
 // Filter Operations End
 
 // Reduce Operation Start
@@ -84,16 +88,17 @@ const users = [
 
 // console.log(output);
 
-const output = users.reduce(function (acc, curr) {
-  if (acc[curr.age]) {
-    acc[curr.age] = acc[curr.age] + 1;
-  } else {
-    acc[curr.age] = 1;
-  }
-  return acc;
-}, {});
+// const output = users.reduce(function (acc, curr) {
+//   if (acc[curr.age]) {
+//     acc[curr.age] = acc[curr.age] + 1;
+//   } else {
+//     acc[curr.age] = 1;
+//   }
+//   return acc;
+// }, {});
 
-console.log(output);
+// console.log(output);
+
 // Reduce Operation End
 
 function OpperationsWithArray(props) {
