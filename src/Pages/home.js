@@ -72,6 +72,7 @@ function Home(props) {
         <Link to="/grid">Grid</Link>
         <Link to="/popDrillingPage">PopDrillingPage</Link>
         <Link to="/googleAuth">GoogleAuth</Link>
+        <Link to="/opperationsWithArray">OpperationsWithArray</Link>
         <Link to="/hoc">Hoc</Link>
         <Link to="/register">Register</Link>
         <div>Or</div>

@@ -8,6 +8,7 @@ import Register from "../Pages/register";
 import SignIn from "../Pages/signIn";
 import Grid from "../Pages/grid";
 import Hoc from "../Pages/hoc";
+import OpperationsWithArray from "../Pages/opperationsWithArray";
 
 function Navigation(props) {
   return (
@@ -21,6 +22,11 @@ function Navigation(props) {
           <Route exact path="/googleAuth" element={<GoogleAuth />}></Route>
           <Route exact path="/grid" element={<Grid />}></Route>
           <Route exact path="/hoc" element={<Hoc />}></Route>
+          <Route
+            exact
+            path="/opperationsWithArray"
+            element={<OpperationsWithArray />}
+          ></Route>
           <Route
             exact
             path="/popDrillingPage"
